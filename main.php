@@ -6,6 +6,7 @@
     require_once('Endereco.php');
     require_once('Produto.php');
     require_once('Veiculo.php');
+    
 
     use PHP\Modelo\Pessoa;//Defina qual a classe
     use PHP\Modelo\Cliente;
@@ -13,6 +14,7 @@
     use PHP\Modelo\Endereco;
     use PHP\Modelo\Produto;
     use PHP\Modelo\Veiculo;
+    use PHP\Modelo\Produto
 
     $endereco1 = new Endereco(1,'Avenida Senador Vergueiro','Centro','Bairro','São Bernardo do Campo','São Paulo','0129309','Brasil');
 
