@@ -5,12 +5,12 @@
 
     class OperadoraCartao{
 
-        private string $numeroConta;
+
         private string $numeroCartao;
         private string $senha;
 
-        public function __construct(string $numeroConta,string $numeroCartao,string $senha){
-            $this->numeroConta = $numeroConta;
+
+        public function __construct(string $numeroCartao,string $senha){
             $this->numeroCartao = $numeroCartao;
             $this->senha = $senha;
         }
@@ -24,7 +24,12 @@
         }
 
         public function imprimir(): string{
-            return "Número da Conta: ".$this->numeroConta."Número do Cartão: ".$this->numeroCartao."Senha: ".$this->senha;
+            if($this->senha == "123" && $this->numeroCartao =="4321" ){
+                return "Bem-Vindo!<br><br>Número do Cartão: ".$this->numeroCartao."<br>Senha: ".$this->senha;
+
+            }else{
+                return "Senha e/ou Número do Cartão Errado!";
+            }
         }
 
     }
