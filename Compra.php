@@ -2,16 +2,18 @@
 
     namespace PHP\Modelo;
 
+    require_once('Produto.php');
+    use PHP\Modelo\Produto;
 
     class Compra{
 
         private int $codigo;
-        private string $produtos;
+        private Produto $produtos;
         private string $quantidade;
         private float $precoUnitario;
         private float $precoFinal;
 
-        public function __construction(int $codigo,string $produtos,string $quantidade,float $precoUnitario,float $precoFinal){
+        public function __construction(int $codigo,Produto $produtos,string $quantidade,float $precoUnitario,float $precoFinal){
             $this->codigo = $codigo
             $this->produtos = $produtos
             $this->quantidade = $quantidade
@@ -28,7 +30,7 @@
         }
 
         public function imprimir(){
-            return "<br>Código: ".$this->codigo."<br>Produtos: ".$this->produtos."<br>Quantidade: ".$this->quantidade."<br>Preço Unitario: ".$this->precoUnitario."<br>Preço Final: ".$this->precoFinal.
+            return "<br>Código: ".$this->codigo."<br>Produtos: ".$this->produtos->imprimir()."<br>Quantidade: ".$this->quantidade."<br>Preço Unitario: ".$this->precoUnitario."<br>Preço Final: ".$this->precoFinal.
         }
 
     }

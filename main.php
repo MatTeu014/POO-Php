@@ -6,6 +6,7 @@
     require_once('Endereco.php');
     require_once('Produto.php');
     require_once('Veiculo.php');
+    require_once('DAO/Conexao.php');
     
 
     use PHP\Modelo\Pessoa;//Defina qual a classe
@@ -14,9 +15,13 @@
     use PHP\Modelo\Endereco;
     use PHP\Modelo\Produto;
     use PHP\Modelo\Veiculo;
-    use PHP\Modelo\Produto
+    use PHP\Modelo\DAO\Conexao;
 
-    $endereco1 = new Endereco(1,'Avenida Senador Vergueiro','Centro','Bairro','São Bernardo do Campo','São Paulo','0129309','Brasil');
+    $conexao = new Conexao();
+    $conexao->conectar();
+
+    /*
+    $endereco1 = new Endereco(1,'Avenida Senador Vergueiro','Centro','Bairro','São Bernardo do Campo','São Paulo',0129309,'Brasil');
 
     $pessoa1 = new Pessoa('12345678910','Roberto','123123123',$endereco1);
 
@@ -34,6 +39,9 @@
     echo"<br><br>".$funcionario1->imprimir();  
     echo"<br><br>".$produto1->imprimir();
     echo "<br><br>".$veiculo1->imprimir();
-    
+    */
+
+
+
 
 ?>

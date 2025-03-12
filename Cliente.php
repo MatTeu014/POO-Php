@@ -23,7 +23,7 @@
             $this->variavel = $dados;
         }//fim do set
 
-        public function imprimir():string{
+        public function imprimir():mixed{
             return parent::imprimir()."<br>Preço Total: R$".$this->precoTotal;
         }
         
