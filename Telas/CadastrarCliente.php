@@ -3,12 +3,15 @@
     
     require_once('../DAO/Conexao.php');
     require_once('../DAO/Inserir.php');
+    require_once('../DAO/Consultar.php');
 
     use PHP\Modelo\DAO\Conexao;
     use PHP\Modelo\DAO\Inserir;
+    use PHP\Modelo\DAO\Consultar;
 
     $conexao = new Conexao();//Acessar a classe conexao
     $inserir = new Inserir();//
+    $consultar = new Consultar();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -82,10 +85,9 @@
         </div>
 
         <button type = "submit">Cadastrar<?php
+
             try{
 
-                
-    
                 $cpf = $_POST['cpf'];
                 $nome = $_POST['nome'];
                 $telefone = $_POST['telefone'];
@@ -103,7 +105,8 @@
 
             $inserir->cadastrarEndereco($conexao,$logradouro,$numero,$bairro,$cidade,$estado,$cep,$pais);
 
-            $inserir->cadastrarCliente($conexao,$cpf,$nome,$telefone,'1',$precoTotal);
+            $inserir->cadastrarCliente($conexao,$cpf,$nome,$telefone,$consultar->consultarEndereco($conexao),$precoTotal);
+            
         ?></button>
 
         
